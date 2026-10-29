@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Product Explorer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="api.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div>
+      <h1>Product Explorer</h1>
+      <p>Discover products from a live API</p>
+    </div>
+    <button id="themeBtn" type="button">Toggle Theme</button>
+  </header>
+
+  <main class="container">
+    <section class="toolbar">
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search products..."
+        aria-label="Search products"
+      >
+
+      <select id="sortSelect" aria-label="Sort products">
+        <option value="default">Default order</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+        <option value="name">Name: A to Z</option>
+      </select>
+    </section>
+
+    <nav id="categoryTabs" class="category-tabs"
+         aria-label="Product categories"></nav>
+
+    <section class="status" aria-live="polite">
+      <p id="loading" hidden>Loading products...</p>
+      <p id="error" class="error" hidden></p>
+      <p id="resultCount"></p>
+    </section>
+
+    <section id="productGrid" class="product-grid"
+             aria-label="Products"></section>
+
+    <section class="cart-panel">
+      <h2>Shopping Cart (<span id="cartCount">0</span>)</h2>
+      <ul id="cartList"></ul>
+      <button id="clearCart" type="button">Clear Cart</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Dynamic JavaScript DOM Logic & RESTful API Client</p>
+  </footer>
+</body>
+</html>
